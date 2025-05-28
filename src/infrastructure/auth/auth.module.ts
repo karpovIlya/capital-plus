@@ -31,5 +31,6 @@ import { TokenService } from './services/token.service'
     LoginCommand,
     { provide: ITokenService, useClass: TokenService },
   ],
+  exports: [ITokenService],
 })
 export class AuthModule {}

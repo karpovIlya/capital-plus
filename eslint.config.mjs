@@ -36,7 +36,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-return': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unnecessary-type-assertion': 'off',
-      'max-len': ['error', { 'code': 95 }],
+      'max-len': ['error', { 'code': 100 }],
       'quotes': ['error', 'single'],
       'semi': ['error', 'never'],
       'prettier/prettier': [

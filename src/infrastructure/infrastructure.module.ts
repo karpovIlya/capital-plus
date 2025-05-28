@@ -1,8 +1,12 @@
 import { Module } from '@nestjs/common'
 import { SequelizeModule } from '@nestjs/sequelize'
 import { ConfigModule, ConfigService } from '@nestjs/config'
+import { PassportModule } from '@nestjs/passport'
 import { UserModule } from './user/user.module'
 import { AuthModule } from './auth/auth.module'
+import { FinanceModule } from './finance/finance.module'
+
+import { JwtStrategy } from 'src/presentation/strategies/jwt.strategy'
 
 @Module({
   imports: [
@@ -20,8 +24,11 @@ import { AuthModule } from './auth/auth.module'
         synchronize: true,
       }),
     }),
+    PassportModule,
     UserModule,
     AuthModule,
+    FinanceModule,
   ],
+  providers: [JwtStrategy],
 })
 export class InfrastructureModule {}
